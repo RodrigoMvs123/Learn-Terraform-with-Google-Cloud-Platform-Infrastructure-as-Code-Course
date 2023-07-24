@@ -2,7 +2,7 @@
 
 https://www.youtube.com/watch?v=VCayKl82Lt8 
 
-
+https://raw.githubusercontent.com/RodrigoMvs123/Learn-Terraform-with-Google-Cloud-Platform-Infrastructure-as-Code-Course/main/README.md
 
 
 
