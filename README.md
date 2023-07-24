@@ -4,7 +4,7 @@ https://www.youtube.com/watch?v=VCayKl82Lt8
 
 https://raw.githubusercontent.com/RodrigoMvs123/Learn-Terraform-with-Google-Cloud-Platform-Infrastructure-as-Code-Course/main/README.md
 
-
+https://github.com/RodrigoMvs123/Learn-Terraform-with-Google-Cloud-Platform-Infrastructure-as-Code-Course/blame/main/README.md
 
 Deploy an website to google cloud platform using terraform
 
