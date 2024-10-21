@@ -1,4 +1,4 @@
-# Learn-Terraform-with-Google-Cloud-Platform-Infrastructure-as-Code-Course
+## Learn-Terraform-with-Google-Cloud-Platform-Infrastructure-as-Code-Course
 
 https://www.youtube.com/watch?v=VCayKl82Lt8 
 
@@ -8,18 +8,22 @@ https://github.com/RodrigoMvs123/Learn-Terraform-with-Google-Cloud-Platform-Infr
 
 Deploy an website to google cloud platform using terraform
 
-Users
+#### Users
+```
 Cloud DNS ( Domain Name System )
 Cloud CDN ( Content Distribution Network )
 Cloud load Balancing 
 Cloud storage 
+```
 
-Google Cloud Platform
+## Google Cloud Platform
+```
 Terraform 
 Domain Name
-GCloud 
+```
 
 Google Cloud
+```
 Select a project
 Name                  ID
 Youtube               lateral academy-31813
@@ -64,18 +68,23 @@ Add key
 Create new key
 Key type JSON
 Create
+```
 
-Install Terraform 
-https://brew.sh/
+#### Install Terraform 
+- https://brew.sh/
 https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli#install-cli 
 
+## Source Code
+```
 Visual Studio Code
 Explorer 
 OPEN EDITORS
 Learn Terraform with Google Cloud Platform – Infrastructure as Code Course
 Infra
 main.tf
+```
 
+```terraform
 main.tf
 # GCP provider
 
@@ -84,14 +93,19 @@ provider "google" {
   project      = var.gcp_project
   region       = var.gcp_region
 }
+```
 
+## Source Code
+```
 Visual Studio Code
 Explorer 
 OPEN EDITORS
 Learn Terraform with Google Cloud Platform – Infrastructure as Code Course
 Infra
 main.tf
+```
 
+```terraform
 main.tf
 # Bucket to store website
 resource "google_storage_bucket" "website" {
@@ -115,14 +129,19 @@ resource "google_storage_bucket_object" "static_site_src" {
   bucket = google_storage_bucket.website.name
   
 }
+```
 
+## Source Code
+```
 Visual Studio Code
 Explorer 
 OPEN EDITORS
 Learn Terraform with Google Cloud Platform – Infrastructure as Code Course
 Infra
 .terraform.lock.hcl
+```
 
+```terraform
 .terraform.lock.hcl
 # This file is maintained automatically by "terraform init".
 # Manual edits may be lost in future updates.
@@ -164,32 +183,44 @@ provider "registry.terraform.io/hashicorp/google-beta" {
     "zh:f569b65999264a9416862bca5cd2a6177d94ccb0424f3a4ef424428912b9cb3c",
   ]
 }
+```
 
+## Source Code
+```
 Visual Studio Code
 Explorer 
 OPEN EDITORS
 Learn Terraform with Google Cloud Platform – Infrastructure as Code Course
 Infra
 variables.tf
+```
 
+```terraform
 variables.tf
 variable "gcp_svc_key" {}
 variable "gcp_project" {}
 variable "gcp_region" {}
+```
 
+## Source Code
+```
 Visual Studio Code
 Explorer 
 OPEN EDITORS
 Learn Terraform with Google Cloud Platform – Infrastructure as Code Course
 Infra
 terraform.tfvars
+```
 
+```terraform
 terraform.tfvars
 gcp_svc_key = "..lateral-academy-314813-9ca87e8e0647.json"
 gcp_project = "lateral-academy-314813
 gcp_region = "us-east1"  
+```
 
-Prompt
+#### Prompt
+```
 -> github cd Desktop
 Desktop ->cd Rodrigo
 Desktop/Rodrigo->cd Visual Studio Code
@@ -202,7 +233,10 @@ Desktop/Rodrigo/Visual Studio Code/FreeCodeCamp/ Learn Terraform with Google Clo
 Platform – Infrastructure as Code Course/freecodecamp-terraform-with-gcp/infra->terraform plan 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the followed symbols:
 create
+```
+
 Terraform will perform the following actions:
+```
 # google_storage_bucket.website will be created
 +resource “google_storage_bucket” “website” {
 force_destroy              = false
@@ -217,9 +251,12 @@ google_storage_bucket.website: …
 google_storage_bucket_object.static_site_src: …
 google_storage_object_access_control.public_rule: …
 Desktop/Rodrigo/Visual Studio Code/FreeCodeCamp/ Learn Terraform with Google Cloud Platform –  Infrastructure as Code Course/freecodecamp-terraform-with-gcp/infra->
+```
 
-Google Cloud UI 
-https://cloud.google.com/ 
+## Google Cloud UI 
+- https://cloud.google.com/ 
+
+```
 Cloud Storage
 Buckets
 Name                                       Created                              Location Type       Location       
@@ -243,14 +280,19 @@ Overview
 Permission
    public access
 …
+```
 
+## Source Code
+```
 Visual Studio Code
 Explorer 
 OPEN EDITORS
 Learn Terraform with Google Cloud Platform – Infrastructure as Code Course
 Infra
 main.tf
+```
 
+```terraform
 main.tf
 # Bucket to store website
 resource "google_storage_bucket" "website" {
@@ -280,8 +322,10 @@ resource "google_compute_global_address" "website" {
   provider = google
   name     = "website-lb-ip"
 }
+```
 
-Google Cloud UI
+#### Google Cloud UI
+```
 Network services 
 Cloud DNS
 Zones
@@ -311,14 +355,19 @@ ns-cloud-b1.googledomains.com
 ns-cloud-b2.googledomains.com
 ns-cloud-b3.googledomains.com
 ns-cloud-b4.googledomains.com
+```
 
+## Source Code
+```
 Visual Studio Code
 Explorer 
 OPEN EDITORS
 Learn Terraform with Google Cloud Platform – Infrastructure as Code Course
 Infra
 main.tf
+```
 
+```terraform
 main.tf
 # Bucket to store website
 resource "google_storage_bucket" "website" {
@@ -407,16 +456,21 @@ resource "google_compute_global_forwarding_rule" "default" {
   port_range            = "443"
   target                = google_compute_target_https_proxy.website.self_link
 }
+```
+
 
 Prompt
+```
 Desktop/Rodrigo/Visual Studio Code/FreeCodeCamp/ Learn Terraform with Google Cloud Platform –  Infrastructure as Code Course/freecodecamp-terraform-with-gcp/infra->terradorm plan
 …
 Plan: 5 to add, 0 to change, 0 to destroy.
 Desktop/Rodrigo/Visual Studio Code/FreeCodeCamp/ Learn Terraform with Google Cloud Platform –  Infrastructure as Code Course/freecodecamp-terraform-with-gcp/infra->terraform apply
 …
 Apply completed ! Resources: 5 to add, 0 to change, 0 to destroy. 
+```
 
-Google Cloud UI
+#### Google Cloud UI
+```
 Load Balancing ( Search Bar )
 Name                   Load balancer type      Protocols   Regions   Backends
 website-url-map   HTTP(S) (Classic)        HTTP                         1 backend bucket
@@ -459,16 +513,23 @@ website-cert
 domain                                    Status
 website.gcp.rishab.cloud         Provisioning 
 …
+```
 
 Prompt
+```
 Desktop/Rodrigo/Visual Studio Code/FreeCodeCamp/ Learn Terraform with Google Cloud Platform –  Infrastructure as Code Course/freecodecamp-terraform-with-gcp/infra->terraform destroy
+```
 
+## Source Code
+```
 Visual Studio Code
 Explorer 
 OPEN EDITORS
 Learn Terraform with Google Cloud Platform – Infrastructure as Code Course
 .gitignore
+```
 
+```gitgnore
 .gitignore
 # Local .terraform directories
 **/.terraform/*
@@ -507,8 +568,11 @@ terraform.rc
 
 #Ignore GCP SVC Key
 lateral-academy-svc-key-gcp.json
+```
 
 
 
 
  
+
+
